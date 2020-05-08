@@ -140,7 +140,7 @@ The handlers `__callStatic` method will be called if it is implemented.
 use extension string FooStringExtension;
 
 class DynamicStringExtension {
-    public function foo() {}
+    public function foo($self) {}
 
     public function __callStatic($self) {}
 }
