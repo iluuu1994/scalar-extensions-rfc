@@ -90,22 +90,18 @@ Function names are usually prefixed by the scalar type (`string_`, `str`, `array
 
 ## Scoping
 
-Similar to `use`, `use extension` is only applied to the current file / namespace block. This will allow seamless integration of libraries that might be using different scalar extensions.
+`use extension` is only applied to the current file. This will allow seamless integration of libraries that might be using different scalar extensions. `use extension` is only valid at the top of the file.
 
 ```php
-namespace {
-    use extension string FooStringExtension;
+// file1.php
+use extension string FooStringExtension;
+'foo'->foo();
+'foo'->bar(); // Not valid here
 
-    'foo'->foo();
-    'foo'->bar(); // Not valid here
-}
-
-namespace {
-    use extension string BarStringExtension;
-
-    'bar'->bar();
-    'bar'->foo(); // Not valid here
-}
+// file2.php
+use extension string BarStringExtension;
+'bar'->bar();
+'bar'->foo(); // Not valid here
 ```
 
 ## Multiple handlers
