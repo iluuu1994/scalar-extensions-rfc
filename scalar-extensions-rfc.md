@@ -4,7 +4,7 @@
 * Author: Ilija Tovilo, tovilo.ilija@gmail.com
 * Status: Under discussion
 * Target Version: PHP 8.0
-* Implementation: https://github.com/php/php-src/pull/5535
+* Implementation: [https://github.com/php/php-src/pull/5535](https://github.com/php/php-src/pull/5535)
 
 ## Proposal
 
@@ -128,7 +128,7 @@ class BarStringExtension {
 'baz'->baz(); // Error: Call to undefined method string::baz()
 ```
 
-## `__callStatic`
+## callStatic
 
 The handlers `__callStatic` method will be called if it is implemented.
 
